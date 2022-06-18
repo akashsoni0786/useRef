@@ -33,6 +33,7 @@ $img = $_SESSION['img_location'];
         <div class="loader"></div>
     </div>
 
+
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
@@ -167,26 +168,116 @@ $img = $_SESSION['img_location'];
 
     <!-- Categories Section Begin -->
     <section class="categories categories-grid spad">
-
         <div class="categories__post">
             <div class="container">
                 <div class="categories__grid__post">
-                    <div style="align-items: center;justify-content: start;
-                display: flex;width:100%; margin-bottom: 50px;">
-                        <input type="text" id="searchhomepage" placeholder="Search here.....">
-                    </div>
                     <div class="row">
                         <div class="col-lg-8 col-md-8">
-                            <!-- <div class="breadcrumb__text">
-                                <h2>Categories: <span>Recipes</span></h2>
-                                <div class="breadcrumb__option">
-                                    <a href="#">Home</a>
-                                    <span>Recipes</span>
-                                </div>
-                            </div> -->
-                            <span id="showposts"></span>
-
-
+                            <!-- <div class="showposts"> -->
+                            <!-- <div class=""> -->
+                                        <div id="showposts" class="header__megamenu">
+                                        
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-2.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-3.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-4.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-5.jpg">
+                                                    <div class="label">Vegan</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- </div> -->
 
 
                             <!-- <div class="col-lg-4 col-md-4">
@@ -310,22 +401,7 @@ $img = $_SESSION['img_location'];
             </div>
     </section>
     <!-- Categories Section End -->
-    <!-- Add Your Blog Here -->
-    <div id="blogAddition">
-        <div class="sidebar__subscribe__item">
-            <div class="sidebar__item__title">
-                <h6>Add Your Blog Here</h6>
-            </div>
-            <p>.</p>
-            <form id="myFormforBlog" enctype="multipart/form-data">
-                <input type="text" id="blogcategory" name="blogcategory" class="email-input" placeholder="Enter Category">
-                <input type="text" id="blogheading" name="blogheading" class="email-input" placeholder="Enter Heading">
-                <input type="text" id="blogcontent" name="blogcontent" class="email-input" placeholder="Enter Content">
-                <input type="file" name="fileToUpload" id="fileToUpload" class="email-input" placeholder="Choose your image for upload">
-                <button id="addbtnforblog" name="submit" type="submit" class="site-btn">Add</button>
-            </form>
-        </div>
-    </div>
+
     <!-- Footer Section Begin -->
     <footer class="footer">
         <div class="container-fluid">
@@ -415,96 +491,43 @@ $img = $_SESSION['img_location'];
                     url: "homeserver.php",
                     type: "POST",
                     data: {
-                        showAllPosts: true
+                        showAllPoststoAdmin: "Show"
                     },
                     success: function(result) {
-                        var arr = JSON.parse(result);
-                        var post = arr['post'];
-                        var user = arr['user'];
-                        var posts = JSON.parse(post);
-                        var usersArr = JSON.parse(user);
+                        var posts = JSON.parse(result);
                         var row = '';
                         var years = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-                        usersArr.forEach(j => {
-                            if (j['user_ban'] == '0') {
-                                var uid = j['user_id'];
-                                posts.forEach(i => {
-
-                                    if (i['post_restricted'] == '0' && uid == i['user_id']) {
-                                        var y = i['post_date'].substr(5, 2).replace(/^0+/, '') - 1;
-                                        var yer = years[y];
-
-                                        row += '<div class="categories__list__post__item">' +
-                                            '<div class="row"><div class="col-lg-6 col-md-6">' +
-                                            '<div class="categories__post__item__pic set-bg" ' +
-                                            'data-setbg="img/categories/categories-list/cl-7.jpg" ' +
-                                            'style="background-image: url(&quot;' + i['post_img'] + '&quot;);">' +
-                                            '<div class="post__meta"><h4>' + i['post_date'].substr(8, 2) + '</h4><span>' + yer + '</span></div>' +
-                                            '</div></div><div class="col-lg-6 col-md-6">' +
-                                            '<div class="categories__post__item__text">' +
-                                            '<ul class="post__label--large">' +
-                                            '<li>' + i['post_category_name'] + '</li></ul>' +
-                                            '<h3><a class="headingofBlog" id="' + i['post_id'] + '" href="#">' + i['post_heading'] + '</a>' +
-                                            '</h3><ul class="post__widget">' +
-                                            '</ul><p>' + i['post_content'].substr(0, 350) + '..........</p></div></div></div></div>';
-                                    }
-
-                                });
-                            }
-                        });
-
+                        posts.forEach(i => {
+                            var y = i['post_date'].substr(5, 2).replace(/^0+/, '') - 1;
+                            var yer = years[y];
+                            row +='<div class="header__megamenu__item">'+
+                                                '<div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg"'+
+                                                'style="background-image: url(&quot;' + i['post_img'] + '&quot;);">'+
+                                                    '<div class="label">'+i['user_id']+'</div>'+
+                                                '</div>'+
+                                                '<div class="header__megamenu__item--text">'+
+                                                    '<h5 id="'+i['post_id']+'" class="showdetails"><a  href="#!">' + i['post_heading'].substr(0, 30) + '</a>'+
+                                                    '</h5></div></div>';
+                          });
                         $("#showposts").html(row);
                     }
                 });
             }
 
-            $(document).on('click', '.headingofBlog', function() {
+            $(document).on('click',".showdetails",function(){
+                // alert();
                 var post_id = $(this).attr('id');
                 $.ajax({
-                    url: 'homeserver.php',
-                    type: "POST",
-                    data: {
-                        showDetailsofBlog: post_id
-                    },
-                    success: function(result) {
+                    url : 'homeserver.php',
+                    type : "POST",
+                    data : {showDetailsofBlog : post_id},
+                    success : function(result){
                         console.log(result);
                         window.location = "single-post.php"
                     }
                 });
+
             });
-
-            $("#myFormforBlog").on('submit', function(e) {
-
-                e.preventDefault();
-                var heading = $("#blogheading").val();
-                var content = $("#blogcontent").val();
-                var category = $("#blogcategory").val();
-
-                let img = $("#fileToUpload")[0].files;
-
-
-                var formData = new FormData(this);
-                formData.append('my_image', img[0]);
-                formData.append('blogheading', heading);
-                formData.append('blogcontent', content);
-                formData.append('blogcategory', category);
-
-
-                $.ajax({
-                    url: 'uploads.php',
-                    type: 'post',
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    success: function(res) {
-                        console.log(res);
-                        allPosts();
-                    }
-                });
-            });
-
-
-
 
             $(document).on('keyup', '#searchhomepage', function() {
                 var searchtxt = $("#searchhomepage").val();
@@ -524,7 +547,8 @@ $img = $_SESSION['img_location'];
                         var usersArr = JSON.parse(user);
                         var row = '';
                         var years = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-                        if (searchtxt != "") {
+                        if (searchtxt != "") 
+                        {
                             usersArr.forEach(j => {
                                 if (j['user_ban'] == '0') {
                                     var uid = j['user_id'];
@@ -532,8 +556,9 @@ $img = $_SESSION['img_location'];
                                         if (i['post_restricted'] == '0' && uid == i['user_id']) {
                                             var y = i['post_date'].substr(5, 2).replace(/^0+/, '') - 1;
                                             var yer = years[y];
-
-                                            if (searchtxt.substr(0, 1).toUpperCase() + searchtxt.substr(1) == i['post_heading'].slice(0, len)) {
+                                            
+                                            if (searchtxt.substr(0,1).toUpperCase()+searchtxt.substr(1) == i['post_heading'].slice(0, len)) 
+                                            {
                                                 row += '<div class="categories__list__post__item">' +
                                                     '<div class="row"><div class="col-lg-6 col-md-6">' +
                                                     '<div class="categories__post__item__pic set-bg" ' +
@@ -548,7 +573,10 @@ $img = $_SESSION['img_location'];
                                                     '</h3><ul class="post__widget">' +
                                                     '</ul><p>' + i['post_content'].substr(0, 350) + '..........</p></div></div></div></div>';
 
-                                            } else if (searchtxt.substr(0, 1).toUpperCase() + searchtxt.substr(1) == i['post_category_name'].slice(0, len)) {
+                                            }
+
+                                            else if (searchtxt.substr(0,1).toUpperCase()+searchtxt.substr(1) == i['post_category_name'].slice(0, len)) 
+                                            {
                                                 row += '<div class="categories__list__post__item">' +
                                                     '<div class="row"><div class="col-lg-6 col-md-6">' +
                                                     '<div class="categories__post__item__pic set-bg" ' +
@@ -570,7 +598,9 @@ $img = $_SESSION['img_location'];
                                 }
                             });
                             $("#showposts").html(row);
-                        } else {
+                        }
+                        else
+                        {
                             allPosts();
                         }
 
@@ -579,7 +609,12 @@ $img = $_SESSION['img_location'];
                     }
                 });
             });
+
         });
+           
+
+
+     
     </script>
 </body>
 

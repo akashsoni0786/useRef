@@ -1,6 +1,5 @@
 <?php
 session_start();
-$img = $_SESSION['img_location'];
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -11,7 +10,7 @@ $img = $_SESSION['img_location'];
     <meta name="keywords" content="Foodeiblog, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Foodeiblog</title>
+    <title>Foodeiblog | Template</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap" rel="stylesheet">
@@ -32,6 +31,7 @@ $img = $_SESSION['img_location'];
     <div id="preloder">
         <div class="loader"></div>
     </div>
+
 
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
@@ -68,57 +68,6 @@ $img = $_SESSION['img_location'];
                         <nav class="header__menu">
                             <ul>
                                 <li><a href="./index.php">Home</a></li>
-                                <!-- <li><a href="#">Recipes</a>
-                                    <div class="header__megamenu__wrapper">
-                                        <div class="header__megamenu">
-                                            <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg">
-                                                    <div class="label">Vegan</div>
-                                                </div>
-                                                <div class="header__megamenu__item--text">
-                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                            <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-2.jpg">
-                                                    <div class="label">Vegan</div>
-                                                </div>
-                                                <div class="header__megamenu__item--text">
-                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                            <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-3.jpg">
-                                                    <div class="label">Vegan</div>
-                                                </div>
-                                                <div class="header__megamenu__item--text">
-                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                            <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-4.jpg">
-                                                    <div class="label">Vegan</div>
-                                                </div>
-                                                <div class="header__megamenu__item--text">
-                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                            <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-5.jpg">
-                                                    <div class="label">Vegan</div>
-                                                </div>
-                                                <div class="header__megamenu__item--text">
-                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li> -->
                                 <li><a href="./allusersforadmin.php">All Users</a></li>
                                 <li><a href="./allpostsforadmin.php">All Posts</a></li>
                                 <li><a href="./admin.php">All Category</a></li>
@@ -167,23 +116,16 @@ $img = $_SESSION['img_location'];
 
     <!-- Categories Section Begin -->
     <section class="categories categories-grid spad">
-
         <div class="categories__post">
             <div class="container">
                 <div class="categories__grid__post">
-                    <div style="align-items: center;justify-content: start;
-                display: flex;width:100%; margin-bottom: 50px;">
-                        <input type="text" id="searchhomepage" placeholder="Search here.....">
-                    </div>
                     <div class="row">
+                        <div style="align-items: center;justify-content: start;
+                display: flex;width:100%; margin-bottom: 50px;">
+                            <input type="text" id="searchadminpage" placeholder="Search here.....">
+                        </div>
                         <div class="col-lg-8 col-md-8">
-                            <!-- <div class="breadcrumb__text">
-                                <h2>Categories: <span>Recipes</span></h2>
-                                <div class="breadcrumb__option">
-                                    <a href="#">Home</a>
-                                    <span>Recipes</span>
-                                </div>
-                            </div> -->
+
                             <span id="showposts"></span>
 
 
@@ -415,44 +357,54 @@ $img = $_SESSION['img_location'];
                     url: "homeserver.php",
                     type: "POST",
                     data: {
-                        showAllPosts: true
+                        showAllPoststoAdmin: true
                     },
                     success: function(result) {
-                        var arr = JSON.parse(result);
-                        var post = arr['post'];
-                        var user = arr['user'];
-                        var posts = JSON.parse(post);
-                        var usersArr = JSON.parse(user);
+                        var posts = JSON.parse(result);
                         var row = '';
                         var years = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-                        usersArr.forEach(j => {
-                            if (j['user_ban'] == '0') {
-                                var uid = j['user_id'];
-                                posts.forEach(i => {
-
-                                    if (i['post_restricted'] == '0' && uid == i['user_id']) {
-                                        var y = i['post_date'].substr(5, 2).replace(/^0+/, '') - 1;
-                                        var yer = years[y];
-
-                                        row += '<div class="categories__list__post__item">' +
-                                            '<div class="row"><div class="col-lg-6 col-md-6">' +
-                                            '<div class="categories__post__item__pic set-bg" ' +
-                                            'data-setbg="img/categories/categories-list/cl-7.jpg" ' +
-                                            'style="background-image: url(&quot;' + i['post_img'] + '&quot;);">' +
-                                            '<div class="post__meta"><h4>' + i['post_date'].substr(8, 2) + '</h4><span>' + yer + '</span></div>' +
-                                            '</div></div><div class="col-lg-6 col-md-6">' +
-                                            '<div class="categories__post__item__text">' +
-                                            '<ul class="post__label--large">' +
-                                            '<li>' + i['post_category_name'] + '</li></ul>' +
-                                            '<h3><a class="headingofBlog" id="' + i['post_id'] + '" href="#">' + i['post_heading'] + '</a>' +
-                                            '</h3><ul class="post__widget">' +
-                                            '</ul><p>' + i['post_content'].substr(0, 350) + '..........</p></div></div></div></div>';
-                                    }
-
-                                });
+                        posts.forEach(i => {
+                            if (i['post_restricted'] == '0') {
+                                var y = i['post_date'].substr(5, 2).replace(/^0+/, '') - 1;
+                                var yer = years[y];
+                                row += '<div class="categories__list__post__item">' +
+                                    '<div class="row"><div class="col-lg-6 col-md-6">' +
+                                    '<div class="categories__post__item__pic set-bg" ' +
+                                    'data-setbg="img/categories/categories-list/cl-7.jpg" ' +
+                                    'style="background-image: url(&quot;' + i['post_img'] + '&quot;);">' +
+                                    '<div class="post__meta"><h4>' + i['post_date'].substr(8, 2) + '</h4><span>' + yer + '</span></div>' +
+                                    '</div></div><div class="col-lg-6 col-md-6">' +
+                                    '<div class="categories__post__item__text">' +
+                                    '<ul class="post__label--large">' +
+                                    '<li>' + i['post_category_name'] + '</li></ul>' +
+                                    '<h3><a class="headingofBlog" id="' + i['post_id'] + '" href="#">' + i['post_heading'] + '</a>' +
+                                    '</h3><ul class="post__widget">' +
+                                    '<li>by <span>Admin</span></li>' +
+                                    '<li>3 min read</li>' +
+                                    '<li>20 Comment</li>' +
+                                    '</ul><p>' + i['post_content'].substr(0, 160) + '..........</p></div></div></div></div>';
+                            }
+                            if (i['post_restricted'] == '1') {
+                                var y = i['post_date'].substr(5, 2).replace(/^0+/, '') - 1;
+                                var yer = years[y];
+                                row += '<div class="categories__list__post__item bg-danger text-light">' +
+                                    '<div class="row"><div class="col-lg-6 col-md-6">' +
+                                    '<div class="categories__post__item__pic set-bg" ' +
+                                    'data-setbg="img/categories/categories-list/cl-7.jpg" ' +
+                                    'style="background-image: url(&quot;' + i['post_img'] + '&quot;);">' +
+                                    '<div class="post__meta"><h4>' + i['post_date'].substr(8, 2) + '</h4><span>' + yer + '</span></div>' +
+                                    '</div></div><div class="col-lg-6 col-md-6">' +
+                                    '<div class="categories__post__item__text">' +
+                                    '<ul class="post__label--large">' +
+                                    '<li class="text-warning">' + i['post_category_name'] + '</li></ul>' +
+                                    '<h3><a  class="headingofBlog text-light" id="' + i['post_id'] + '" href="#">' + i['post_heading'] + '</a>' +
+                                    '</h3><ul class="post__widget">' +
+                                    '<li>by <span>Admin</span></li>' +
+                                    '<li>3 min read</li>' +
+                                    '<li>20 Comment</li>' +
+                                    '</ul><p class="text-light">' + i['post_content'].substr(0, 160) + '..........</p></div></div></div></div>';
                             }
                         });
-
                         $("#showposts").html(row);
                     }
                 });
@@ -473,6 +425,9 @@ $img = $_SESSION['img_location'];
                 });
             });
 
+
+
+
             $("#myFormforBlog").on('submit', function(e) {
 
                 e.preventDefault();
@@ -489,7 +444,7 @@ $img = $_SESSION['img_location'];
                 formData.append('blogcontent', content);
                 formData.append('blogcategory', category);
 
-
+                console.log(formData);
                 $.ajax({
                     url: 'uploads.php',
                     type: 'post',
@@ -497,76 +452,62 @@ $img = $_SESSION['img_location'];
                     contentType: false,
                     processData: false,
                     success: function(res) {
-                        console.log(res);
+                        // console.log(res);
                         allPosts();
                     }
                 });
             });
 
-
-
-
-            $(document).on('keyup', '#searchhomepage', function() {
-                var searchtxt = $("#searchhomepage").val();
+            $(document).on('keyup', '#searchadminpage', function() {
+                var searchtxt = $("#searchadminpage").val();
 
                 $.ajax({
                     url: "homeserver.php",
                     type: "POST",
                     data: {
-                        searchPostsIndexPage: true
+                        showAllPoststoAdmin: true
                     },
                     success: function(result) {
-                        var len = $("#searchhomepage").val().length;
-                        var arr = JSON.parse(result);
-                        var post = arr['post'];
-                        var user = arr['user'];
-                        var posts = JSON.parse(post);
-                        var usersArr = JSON.parse(user);
+                        var len = $("#searchadminpage").val().length;
+                        var posts = JSON.parse(result);
+
                         var row = '';
                         var years = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
                         if (searchtxt != "") {
-                            usersArr.forEach(j => {
-                                if (j['user_ban'] == '0') {
-                                    var uid = j['user_id'];
-                                    posts.forEach(i => {
-                                        if (i['post_restricted'] == '0' && uid == i['user_id']) {
-                                            var y = i['post_date'].substr(5, 2).replace(/^0+/, '') - 1;
-                                            var yer = years[y];
+                            posts.forEach(i =>
+                            {
+                                var y = i['post_date'].substr(5, 2).replace(/^0+/, '') - 1;
+                                var yer = years[y];
+                                if (searchtxt.substr(0, 1).toUpperCase() + searchtxt.substr(1) == i['post_heading'].slice(0, len)) {
+                                    row += '<div class="categories__list__post__item">' +
+                                        '<div class="row"><div class="col-lg-6 col-md-6">' +
+                                        '<div class="categories__post__item__pic set-bg" ' +
+                                        'data-setbg="img/categories/categories-list/cl-7.jpg" ' +
+                                        'style="background-image: url(&quot;' + i['post_img'] + '&quot;);">' +
+                                        '<div class="post__meta"><h4>' + i['post_date'].substr(8, 2) + '</h4><span>' + yer + '</span></div>' +
+                                        '</div></div><div class="col-lg-6 col-md-6">' +
+                                        '<div class="categories__post__item__text">' +
+                                        '<ul class="post__label--large">' +
+                                        '<li>' + i['post_category_name'] + '</li></ul>' +
+                                        '<h3><a class="headingofBlog" id="' + i['post_id'] + '" href="#">' + i['post_heading'] + '</a>' +
+                                        '</h3><ul class="post__widget">' +
+                                        '</ul><p>' + i['post_content'].substr(0, 350) + '..........</p></div></div></div></div>';
 
-                                            if (searchtxt.substr(0, 1).toUpperCase() + searchtxt.substr(1) == i['post_heading'].slice(0, len)) {
-                                                row += '<div class="categories__list__post__item">' +
-                                                    '<div class="row"><div class="col-lg-6 col-md-6">' +
-                                                    '<div class="categories__post__item__pic set-bg" ' +
-                                                    'data-setbg="img/categories/categories-list/cl-7.jpg" ' +
-                                                    'style="background-image: url(&quot;' + i['post_img'] + '&quot;);">' +
-                                                    '<div class="post__meta"><h4>' + i['post_date'].substr(8, 2) + '</h4><span>' + yer + '</span></div>' +
-                                                    '</div></div><div class="col-lg-6 col-md-6">' +
-                                                    '<div class="categories__post__item__text">' +
-                                                    '<ul class="post__label--large">' +
-                                                    '<li>' + i['post_category_name'] + '</li></ul>' +
-                                                    '<h3><a class="headingofBlog" id="' + i['post_id'] + '" href="#">' + i['post_heading'] + '</a>' +
-                                                    '</h3><ul class="post__widget">' +
-                                                    '</ul><p>' + i['post_content'].substr(0, 350) + '..........</p></div></div></div></div>';
+                                } else if (searchtxt.substr(0, 1).toUpperCase() + searchtxt.substr(1) == i['post_category_name'].slice(0, len)) {
+                                    row += '<div class="categories__list__post__item">' +
+                                        '<div class="row"><div class="col-lg-6 col-md-6">' +
+                                        '<div class="categories__post__item__pic set-bg" ' +
+                                        'data-setbg="img/categories/categories-list/cl-7.jpg" ' +
+                                        'style="background-image: url(&quot;' + i['post_img'] + '&quot;);">' +
+                                        '<div class="post__meta"><h4>' + i['post_date'].substr(8, 2) + '</h4><span>' + yer + '</span></div>' +
+                                        '</div></div><div class="col-lg-6 col-md-6">' +
+                                        '<div class="categories__post__item__text">' +
+                                        '<ul class="post__label--large">' +
+                                        '<li>' + i['post_category_name'] + '</li></ul>' +
+                                        '<h3><a class="headingofBlog" id="' + i['post_id'] + '" href="#">' + i['post_heading'] + '</a>' +
+                                        '</h3><ul class="post__widget">' +
+                                        '</ul><p>' + i['post_content'].substr(0, 350) + '..........</p></div></div></div></div>';
 
-                                            } else if (searchtxt.substr(0, 1).toUpperCase() + searchtxt.substr(1) == i['post_category_name'].slice(0, len)) {
-                                                row += '<div class="categories__list__post__item">' +
-                                                    '<div class="row"><div class="col-lg-6 col-md-6">' +
-                                                    '<div class="categories__post__item__pic set-bg" ' +
-                                                    'data-setbg="img/categories/categories-list/cl-7.jpg" ' +
-                                                    'style="background-image: url(&quot;' + i['post_img'] + '&quot;);">' +
-                                                    '<div class="post__meta"><h4>' + i['post_date'].substr(8, 2) + '</h4><span>' + yer + '</span></div>' +
-                                                    '</div></div><div class="col-lg-6 col-md-6">' +
-                                                    '<div class="categories__post__item__text">' +
-                                                    '<ul class="post__label--large">' +
-                                                    '<li>' + i['post_category_name'] + '</li></ul>' +
-                                                    '<h3><a class="headingofBlog" id="' + i['post_id'] + '" href="#">' + i['post_heading'] + '</a>' +
-                                                    '</h3><ul class="post__widget">' +
-                                                    '</ul><p>' + i['post_content'].substr(0, 350) + '..........</p></div></div></div></div>';
-
-                                            }
-                                        }
-
-                                    });
                                 }
                             });
                             $("#showposts").html(row);
