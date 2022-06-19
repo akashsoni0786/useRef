@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "connection.php";
 if(isset($_POST['signupbtn']))
 {
@@ -33,12 +34,15 @@ if(isset($_POST['signinbtn']))
     $password = $arr['password'];
     try
     {
-        $sql = "SELECT `user_name` FROM `Users` where `user_name`='$username' AND `passwords`= '$password'";
+        $sql = "SELECT `user_id` FROM `Users` where `user_name`='$username' AND `passwords`= '$password'";
         $row = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-        if(count($row)== 1){
+        $_SESSION['user_id'] = $row[0]['user_id'];
+        if(count($row)== 1)
+        {
             echo "Logged in successfully";
         }
-        else{
+        else
+        {
             echo "Invalid Credentials";
         }
     }

@@ -1,7 +1,10 @@
 <?php
 session_start();
-
 include "connection.php";
+
+if(isset($_SESSION['user_id']))
+{
+
 if(isset($_POST['showAllPosts']))
 {
     try
@@ -222,9 +225,10 @@ if(isset($_POST['commentCount']))
 
 if(isset($_POST['showDetailsofMYBlog']))
 {
+    $id = $_SESSION['user_id'];
     try
     {
-        $sql = "SELECT * FROM `Posts` WHERE `user_id`= '1111'";
+        $sql = "SELECT * FROM `Posts` WHERE `user_id`= '$id'";
         $row = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($row);
 
@@ -258,8 +262,6 @@ if(isset($_POST['restrictPost']))
             $conn->query($sql2);
             echo 'Post released successfully';
         }
-        // 
-        // 
 
         }
     catch(PDOException $e)
@@ -387,5 +389,9 @@ if(isset($_POST['searchPostsIndexPage']))
     {
         echo $e;
     }
+}
+}
+else{
+    header('location:./404.php');
 }
 ?>

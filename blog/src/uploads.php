@@ -1,10 +1,14 @@
 
 <?php
 session_start();
-include 'connection.php';
+if(isset($_SESSION['user_id']))
+{
+
 
 if(isset($_FILES['my_image'])) 
 {
+    $id = $_SESSION['user_id'];
+
     $heading = $_POST['blogheading'];
     $category = $_POST['blogcategory'];
     $content = $_POST['blogcontent'];
@@ -34,7 +38,7 @@ if($upload == 1){
     {
         $sql = "INSERT INTO `Posts` (`post_img`, `post_date`, `post_category_name`, 
                 `post_heading`,`post_content`,`user_id`,`post_restricted`) 
-                VALUES ('$img', now() , '$category', '$heading','$content','1111','0')";
+                VALUES ('$img', now() , '$category', '$heading','$content','$id','0')";
             $conn->exec($sql);
             echo "Blog Inserted";
         
@@ -44,6 +48,10 @@ if($upload == 1){
     }
 }
 
+}
+}
+else{
+    header('location:./404.php');
 }
 
 ?>

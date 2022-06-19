@@ -11,8 +11,7 @@
     <title>Foodeiblog</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Unna:400,700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
@@ -48,7 +47,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab" aria-selected="false">
+                            <a class="nav-link" id="signinpageId" data-toggle="tab" href="#tabs-2" role="tab" aria-selected="false">
                                 Sign in
                             </a>
                         </li>
@@ -65,17 +64,30 @@
                                 </div>
                                 <div class="divide">or</div>
                                 <form action="#" id="signupformid">
+                                    <span style="color: red;float: left;" id="usernameerror"></span>
                                     <input type="text" name="username" id="username" placeholder="User Name*">
-                                    <input type="text" name="password" id="password" placeholder="Password">
+
+                                    <span style="color: red;float: left;" id="passworderror"></span>
+                                    <input type="password" name="password" id="password" placeholder="Password">
+
+                                    <span style="color: red;float: left;" id="confpassworderror"></span>
                                     <input type="text" name="confpassword" id="confpassword" placeholder="Confirm Password">
+
+                                    <span style="color: red;float: left;" id="emailaddresserror"></span>
                                     <input type="text" name="emailaddress" id="emailaddress" placeholder="Email Address">
+
+                                    <span style="color: red;float: left;" id="fullnameerror"></span>
                                     <input type="text" name="fullname" id="fullname" placeholder="Full Name">
-                                    <label for="sign-agree-check">
-                                        I agree to the terms & conditions
-                                        <input type="checkbox" id="sign-agree-check">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <button type="submit" class="site-btn">Register Now</button>
+
+
+                                    <hr style="border: none;"> <label for="sign-agree-check">
+                                        <label for="sign-agree-check">
+                                            I agree to the terms & conditions
+                                            <input type="checkbox" id="sign-agree-check">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <p style="color: red;float: left;" id="agreeError"></p><br><br>
+                                        <button type="submit" class="site-btn">Register Now</button>
                                 </form>
                             </div>
                         </div>
@@ -89,8 +101,10 @@
                                 </div>
                                 <div class="divide">or</div>
                                 <form action="#" id="signinformId">
-                                    <input type="text" name="username" id="username" placeholder="User Name*">
-                                    <input type="text" name="password" id="password" placeholder="Password">
+                                    <span style="color: red;float: left;" id="usernameerrorl"></span>
+                                    <input type="text" name="username" id="usernamel" placeholder="User Name*">
+                                    <span style="color: red;float: left;" id="passworderrorl"></span>
+                                    <input type="text" name="password" id="passwordl" placeholder="Password">
                                     <button type="submit" class="site-btn">Sign In</button>
                                 </form>
                             </div>
@@ -172,8 +186,7 @@
                                     <div class="header__megamenu__wrapper">
                                         <div class="header__megamenu">
                                             <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg"
-                                                    data-setbg="img/megamenu/p-1.jpg">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-1.jpg">
                                                     <div class="label">Vegan</div>
                                                 </div>
                                                 <div class="header__megamenu__item--text">
@@ -182,8 +195,7 @@
                                                 </div>
                                             </div>
                                             <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg"
-                                                    data-setbg="img/megamenu/p-2.jpg">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-2.jpg">
                                                     <div class="label">Vegan</div>
                                                 </div>
                                                 <div class="header__megamenu__item--text">
@@ -192,8 +204,7 @@
                                                 </div>
                                             </div>
                                             <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg"
-                                                    data-setbg="img/megamenu/p-3.jpg">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-3.jpg">
                                                     <div class="label">Vegan</div>
                                                 </div>
                                                 <div class="header__megamenu__item--text">
@@ -202,8 +213,7 @@
                                                 </div>
                                             </div>
                                             <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg"
-                                                    data-setbg="img/megamenu/p-4.jpg">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-4.jpg">
                                                     <div class="label">Vegan</div>
                                                 </div>
                                                 <div class="header__megamenu__item--text">
@@ -212,8 +222,7 @@
                                                 </div>
                                             </div>
                                             <div class="header__megamenu__item">
-                                                <div class="header__megamenu__item--pic set-bg"
-                                                    data-setbg="img/megamenu/p-5.jpg">
+                                                <div class="header__megamenu__item--pic set-bg" data-setbg="img/megamenu/p-5.jpg">
                                                     <div class="label">Vegan</div>
                                                 </div>
                                                 <div class="header__megamenu__item--text">
@@ -273,8 +282,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-6 p-0">
-                            <div class="hero__inside__item hero__inside__item--wide set-bg"
-                                data-setbg="img/hero/hero-1.jpg">
+                            <div class="hero__inside__item hero__inside__item--wide set-bg" data-setbg="img/hero/hero-1.jpg">
                                 <div class="hero__inside__item__text">
                                     <div class="hero__inside__item--meta">
                                         <span>08</span>
@@ -297,8 +305,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3 p-0">
-                            <div class="hero__inside__item hero__inside__item--small set-bg"
-                                data-setbg="img/hero/hero-2.jpg">
+                            <div class="hero__inside__item hero__inside__item--small set-bg" data-setbg="img/hero/hero-2.jpg">
                                 <div class="hero__inside__item__text">
                                     <div class="hero__inside__item--meta">
                                         <span>08</span>
@@ -313,8 +320,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="hero__inside__item hero__inside__item--small set-bg"
-                                data-setbg="img/hero/hero-3.jpg">
+                            <div class="hero__inside__item hero__inside__item--small set-bg" data-setbg="img/hero/hero-3.jpg">
                                 <div class="hero__inside__item__text">
                                     <div class="hero__inside__item--meta">
                                         <span>08</span>
@@ -354,8 +360,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-6 p-0">
-                            <div class="hero__inside__item hero__inside__item--wide set-bg"
-                                data-setbg="img/hero/hero-1.jpg">
+                            <div class="hero__inside__item hero__inside__item--wide set-bg" data-setbg="img/hero/hero-1.jpg">
                                 <div class="hero__inside__item__text">
                                     <div class="hero__inside__item--meta">
                                         <span>08</span>
@@ -378,8 +383,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3 p-0">
-                            <div class="hero__inside__item hero__inside__item--small set-bg"
-                                data-setbg="img/hero/hero-3.jpg">
+                            <div class="hero__inside__item hero__inside__item--small set-bg" data-setbg="img/hero/hero-3.jpg">
                                 <div class="hero__inside__item__text">
                                     <div class="hero__inside__item--meta">
                                         <span>08</span>
@@ -394,8 +398,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="hero__inside__item hero__inside__item--small set-bg"
-                                data-setbg="img/hero/hero-2.jpg">
+                            <div class="hero__inside__item hero__inside__item--small set-bg" data-setbg="img/hero/hero-2.jpg">
                                 <div class="hero__inside__item__text">
                                     <div class="hero__inside__item--meta">
                                         <span>08</span>
@@ -478,8 +481,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-8">
                         <div class="categories__post__item categories__post__item--large">
-                            <div class="categories__post__item__pic set-bg"
-                                data-setbg="img/categories/categories-post/cp-1.jpg">
+                            <div class="categories__post__item__pic set-bg" data-setbg="img/categories/categories-post/cp-1.jpg">
                                 <div class="post__meta">
                                     <h4>08</h4>
                                     <span>Aug</span>
@@ -514,8 +516,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="categories__post__item">
-                                    <div class="categories__post__item__pic small__item set-bg"
-                                        data-setbg="img/categories/categories-post/cp-2.jpg">
+                                    <div class="categories__post__item__pic small__item set-bg" data-setbg="img/categories/categories-post/cp-2.jpg">
                                         <div class="post__meta">
                                             <h4>08</h4>
                                             <span>Aug</span>
@@ -535,8 +536,7 @@
                                     </div>
                                 </div>
                                 <div class="categories__post__item">
-                                    <div class="categories__post__item__pic set-bg"
-                                        data-setbg="img/categories/categories-post/cp-4.jpg">
+                                    <div class="categories__post__item__pic set-bg" data-setbg="img/categories/categories-post/cp-4.jpg">
                                         <div class="post__meta">
                                             <h4>08</h4>
                                             <span>Aug</span>
@@ -558,8 +558,7 @@
                                             gravida...</p>
                                     </div>
                                 </div>
-                                <div class="categories__post__item__plain set-bg"
-                                    data-setbg="img/categories/categories-post/cp-6.jpg">
+                                <div class="categories__post__item__plain set-bg" data-setbg="img/categories/categories-post/cp-6.jpg">
                                     <div class="categories__post__item__text">
                                         <div class="post__meta">
                                             <h4>08</h4>
@@ -579,8 +578,7 @@
                                     </div>
                                 </div>
                                 <div class="categories__post__item">
-                                    <div class="categories__post__item__pic smaller__large set-bg"
-                                        data-setbg="img/categories/categories-post/cp-8.jpg">
+                                    <div class="categories__post__item__pic smaller__large set-bg" data-setbg="img/categories/categories-post/cp-8.jpg">
                                         <div class="post__meta">
                                             <h4>08</h4>
                                             <span>Aug</span>
@@ -603,8 +601,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="categories__post__item">
-                                    <div class="categories__post__item__pic smaller__large set-bg"
-                                        data-setbg="img/categories/categories-post/cp-3.jpg">
+                                    <div class="categories__post__item__pic smaller__large set-bg" data-setbg="img/categories/categories-post/cp-3.jpg">
                                         <div class="post__meta">
                                             <h4>08</h4>
                                             <span>Aug</span>
@@ -631,8 +628,7 @@
                                     <div class="posted__by">Elena T.Jaivy</div>
                                 </div>
                                 <div class="categories__post__item">
-                                    <div class="categories__post__item__pic smaller__large set-bg"
-                                        data-setbg="img/categories/categories-post/cp-5.jpg">
+                                    <div class="categories__post__item__pic smaller__large set-bg" data-setbg="img/categories/categories-post/cp-5.jpg">
                                         <div class="post__meta">
                                             <h4>08</h4>
                                             <span>Aug</span>
@@ -652,8 +648,7 @@
                                     </div>
                                 </div>
                                 <div class="categories__post__item">
-                                    <div class="categories__post__item__pic set-bg"
-                                        data-setbg="img/categories/categories-post/cp-7.jpg">
+                                    <div class="categories__post__item__pic set-bg" data-setbg="img/categories/categories-post/cp-7.jpg">
                                         <div class="post__meta">
                                             <h4>08</h4>
                                             <span>Aug</span>
@@ -711,8 +706,7 @@
                                 <div class="sidebar__item__title">
                                     <h6>Feature Posts</h6>
                                 </div>
-                                <div class="sidebar__feature__item__large set-bg"
-                                    data-setbg="img/sidebar/feature-post.jpg">
+                                <div class="sidebar__feature__item__large set-bg" data-setbg="img/sidebar/feature-post.jpg">
                                     <div class="sidebar__feature__item__large--text">
                                         <span>Dinner</span>
                                         <h5><a href="#">This Japanese Way of Making Iced Coffee Is a Game...</a></h5>
@@ -854,10 +848,14 @@
                 </div>
             </div>
             <div class="footer__copyright">
-                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-        </div>
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>
+                        document.write(new Date().getFullYear());
+                    </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
     </footer>
     <!-- Footer Section End -->
 
@@ -871,54 +869,172 @@
         </div>
     </div>
     <!-- Search End -->
-        <!-- Js Plugins -->
-        <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $("#signupformid").on('submit',function(e){
+        $(document).ready(function() {
+            $("#signupformid").on('submit', function(e) {
                 e.preventDefault();
                 var username = $("#username").val();
                 var password = $("#password").val();
                 var confpassword = $("#confpassword").val();
                 var emailaddress = $("#emailaddress").val();
                 var fullname = $("#fullname").val();
+                var agreeCondition = $("#sign-agree-check").is(':checked');
+                var error = [];
+                if (username == "") {
+                    $("#usernameerror").html("Username field is empty");
+                    $("#username").css('border', '5px solid red');
+                    error.push('Field is empty');
+                }
+                if (password == "") {
+                    $("#passworderror").html("Password field is empty");
+                    $("#password").css('border', '5px solid red');
+                    error.push('Field is empty');
+                }
+                if (confpassword == "") {
+                    $("#confpassworderror").html("Confirm password field is empty");
+                    $("#confpassword").css('border', '5px solid red');
+                    error.push('Field is empty');
+                }
+                if (emailaddress == "") {
+                    $("#emailaddresserror").html("Email field is empty");
+                    $("#emailaddress").css('border', '5px solid red');
+                    error.push('Field is empty');
+                }
+                if (fullname == "") {
+                    $("#fullnameerror").html("Full name field is empty");
+                    $("#fullname").css('border', '5px solid red');
+                    error.push('Field is empty');
+                }
+                if (agreeCondition == false) {
+                    $("#agreeError").html("Please agree Terms & Conditions");
+                    error.push('Field is empty');
+                }
+                if (agreeCondition == true) {
+                    $("#agreeError").html("");
+                }
+                if (confpassword != password) {
+                    $("#confpassworderror").html("Passwords are not matching");
+                    $("#confpassword").css('border', '5px solid red');
+                    error.push('Field is empty');
 
-                var formdata = JSON.stringify($(this).serialize());
+                }
+                if (error.length == 0) {
+                    var formdata = JSON.stringify($(this).serialize());
+                    $.ajax({
+                        url: 'loginserver.php',
+                        type: "POST",
+                        data: {
+                            signupbtn: formdata
+                        },
+                        success: function(result) {
+                            if (result == "User registered successfully") {
+                                $("#username").val('');
+                                $("#password").val('');
+                                $("#confpassword").val('');
+                                $("#emailaddress").val('');
+                                $("#fullname").val('');
+                                $("#signinpageId").click();
+                                $("#sign-agree-check").prop('checked', false);
+                            }
+                            if (result == "User already exists") {
+                                $("#usernameerror").html(result);
+                                $("#username").css('border', '5px solid orange');
+                                // alert(result);
+                            }
 
-                $.ajax({
-                    url : 'loginserver.php',
-                    type : "POST",
-                    data : {signupbtn : formdata},
-                    success : function(result){
-                        alert(result);
-                        // console.log(result);
 
-                    }
-                });
+                        }
+                    });
+                }
+
             });
 
-            $("#signinformId").on('submit',function(e){
+
+            $("#username").keyup(function() {
+                $("#usernameerror").html("");
+                $("#username").css('border', '');
+            });
+
+            $("#password").keyup(function() {
+                $("#passworderror").html("");
+                $("#password").css('border', '');
+            });
+
+            $("#confpassword").keyup(function() {
+                $("#confpassworderror").html("");
+                $("#confpassword").css('border', '');
+            });
+
+            $("#emailaddress").keyup(function() {
+                $("#emailaddresserror").html("");
+                $("#emailaddress").css('border', '');
+            });
+
+            $("#fullname").keyup(function() {
+                $("#fullnameerror").html("");
+                $("#fullname").css('border', '');
+            });
+
+            $("#usernamel").keyup(function() {
+                $("#usernameerrorl").html("");
+                $("#usernamel").css('border', '');
+            });
+
+            $("#passwordl").keyup(function() {
+                $("#passworderrorl").html("");
+                $("#passwordl").css('border', '');
+            });
+
+
+            $("#signinformId").on('submit', function(e) {
                 e.preventDefault();
-                var username = $("#username").val();
-                var password = $("#password").val();
+                var username = $("#usernamel").val();
+                var password = $("#passwordl").val();
+                error = [];
 
-                var logindata = JSON.stringify($(this).serialize());
+                if (username == "") {
+                    $("#usernameerrorl").html("Username field is empty");
+                    $("#usernamel").css('border', '5px solid red');
+                    error.push('Field is empty');
+                }
+                if (password == "") {
+                    $("#passworderrorl").html("Password field is empty");
+                    $("#passwordl").css('border', '5px solid red');
+                    error.push('Field is empty');
+                }
+                if (error.length == 0) {
+                    var logindata = JSON.stringify($(this).serialize());
+                    $.ajax({
+                        url: 'loginserver.php',
+                        type: "POST",
+                        data: {
+                            signinbtn: logindata
+                        },
+                        success: function(result) {
+                            if(result == 'Logged in successfully')
+                            {
+                                window.location = 'index.php';
+                            }
+                            if(result == 'Invalid Credentials')
+                            {
+                                $("#usernamel").css('border', '5px solid orange');
+                                $("#passwordl").css('border', '5px solid orange');
+                                alert(result);
 
-                $.ajax({
-                    url : 'loginserver.php',
-                    type : "POST",
-                    data : {signinbtn : logindata},
-                    success : function(result){
-                        alert(result);
-                        // console.log(result);
+                            }
+                            
 
-                    }
-                });
+                        }
+                    });
+                }
+
             });
         });
     </script>

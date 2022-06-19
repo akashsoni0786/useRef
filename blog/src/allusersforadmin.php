@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(isset($_SESSION['user_id']))
+{
+    if($_SESSION['user_id'] == 1111)
+    {
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -36,86 +40,103 @@ session_start();
     </div>
 
 
-    <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="./index.html"><img src="img/humberger/humberger-logo.png" alt=""></a>
+        <!-- Humberger Begin -->
+        <div class="humberger__menu__overlay"></div>
+        <div class="humberger__menu__wrapper">
+            <div class="humberger__menu__logo">
+                <a href="./index.html"><img src="img/humberger/humberger-logo.png" alt=""></a>
+            </div>
+            <nav class="humberger__menu__nav mobile-menu">
+                <ul>
+                    <li><a href="./index.php">Home</a></li>
+                    <?php if ($_SESSION['user_id'] == 1111) { ?>
+                        <li><a href="./allusersforadmin.php">All Users</a></li>
+                        <li><a href="./allpostsforadmin.php">All Posts</a></li>
+                        <li><a href="./admin.php">All Category</a></li>
+                    <?php } ?>
+                    <li><a href="./myblogs.php">My Posts</a></li>
+                    <li><a href="./about.php">About</a></li>
+                    <li><a href="./contact.php">Contact</a></li>
+                    <li><a href="./logout.php">Logout</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
         </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li><a href="./index.php">Home</a></li>
-                <li><a href="./allusersforadmin.php">All Users</a></li>
-                <li><a href="./allpostsforadmin.php">All Posts</a></li>
-                <li><a href="./admin.php">All Category</a></li>
-                <li><a href="./myblogs.php">My Posts</a></li>
-                <li><a href="./about.php">About</a></li>
-                <li><a href="./contact.php">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-    </div>
-    <!-- Humberger End -->
+        <!-- Humberger End -->
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
+        <!-- Header Section Begin -->
+        <header class="header">
+            <div class="header__top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-1 col-6 order-md-1 order-1">
+                            <div class="header__humberger">
+                                <i class="fa fa-bars humberger__open"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-10 order-md-2 order-3">
+                            <nav class="header__menu">
+                                <ul>
+                                    <li><a href="./index.php">Home</a></li>
+                                    <?php if ($_SESSION['user_id'] == 1111) { ?>
+
+                                        <li><a href="./allusersforadmin.php">All Users</a></li>
+                                        <li><a href="./allpostsforadmin.php">All Posts</a></li>
+                                        <li><a href="./admin.php">All Category</a></li>
+                                    <?php } ?>
+                                    <li><a href="./myblogs.php">My Posts</a></li>
+                                    <li><a href="./about.php">About</a></li>
+                                    <li><a href="./contact.php">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-6 order-md-3 order-2">
+                            <div class="header__search">
+                                <a style="color: red;" href="#blogAddition"> <i style="margin-right: 50px;" id="addbtnforblog" class="fa fa-plus "></i>
+                                </a><i class="fa fa-search search-switch"></i>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-2 col-md-1 col-6 order-md-1 order-1">
-                        <div class="header__humberger">
-                            <i class="fa fa-bars humberger__open"></i>
+                    <div class="col-lg-3 col-md-3">
+                        <?php
+                        if (isset($_SESSION['uid'])) {
+                        ?>
+                            <div class="header__btn">
+                                <a href="./logout.php" class="primary-btn">Logout</a>
+                            </div>
+
+                        <?php } else { ?>
+                            <div class="header__btn">
+                                <a href="./signin.php" class="primary-btn">Login</a>
+                            </div>
+
+                        <?php } ?>
+
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-10 order-md-2 order-3">
-                        <nav class="header__menu">
-                            <ul>
-                                <li><a href="./index.php">Home</a></li>
-                                <li><a href="./allusersforadmin.php">All Users</a></li>
-                                <li><a href="./allpostsforadmin.php">All Posts</a></li>
-                                <li><a href="./admin.php">All Category</a></li>
-                                <li><a href="./myblogs.php">My Posts</a></li>
-                                <li><a href="./about.php">About</a></li>
-                                <li><a href="./contact.php">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-lg-2 col-md-1 col-6 order-md-3 order-2">
-                        <div class="header__search">
-                            <a style="color: red;" href="#blogAddition"> <i style="margin-right: 50px;" id="addbtnforblog" class="fa fa-plus "></i>
-                            </a><i class="fa fa-search search-switch"></i>
-
+                    <div class="col-lg-3 col-md-3">
+                        <div class="header__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-envelope-o"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__btn">
-                        <a href="./signin.html" class="primary-btn">Subscribe</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-envelope-o"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Header Section End -->
+        <!-- Header Section End -->
 
     <!-- Single Post Section Begin -->
     <section class="single-post spad">
@@ -432,3 +453,14 @@ session_start();
 </body>
 
 </html>
+<?php
+}
+else{
+    header('location:./404.php');
+}
+} 
+else
+{
+    header('location:./signin.php');
+}
+?>
