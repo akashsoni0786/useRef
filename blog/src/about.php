@@ -92,19 +92,12 @@ if(isset($_SESSION['user_id'])){
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
-                        <?php
-                        if (isset($_SESSION['uid'])) {
-                        ?>
+                      
                             <div class="header__btn">
                                 <a href="./logout.php" class="primary-btn">Logout</a>
                             </div>
 
-                        <?php } else { ?>
-                            <div class="header__btn">
-                                <a href="./signin.php" class="primary-btn">Login</a>
-                            </div>
-
-                        <?php } ?>
+              
 
                     </div>
                     <div class="col-lg-6 col-md-6">
