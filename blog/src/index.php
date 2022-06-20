@@ -86,7 +86,7 @@ if (isset($_SESSION['user_id'])) {
                         </div>
                         <div class="col-lg-2 col-md-1 col-6 order-md-3 order-2">
                             <div class="header__search">
-                                <a style="color: red;" href="#blogAddition"> <i style="margin-right: 50px;" id="addbtnforblog" class="fa fa-plus "></i>
+                                <a style="color: red;" href="#blogAddition"> <i style="margin-right: 50px;" id="addbtnforblog" class="fa fa-plus "><b>Add Blog</b></i>
                                     <!-- </a><i class="fa fa-search search-switch"></i> -->
 
                             </div>
@@ -205,7 +205,7 @@ if (isset($_SESSION['user_id'])) {
                     <input type="text" id="blogheading" name="blogheading" class="email-input" placeholder="Enter Heading">
 
                     <span style="color: red;" id="contentError"></span>
-                    <input type="text" id="blogcontent" name="blogcontent" class="email-input" placeholder="Enter Content">
+                    <textarea type="text" id="blogcontent" name="blogcontent" class="email-input" placeholder="Enter Content"></textarea>
 
                     <span style="color: red;" id="imgError"></span>
                     <input type="file" name="fileToUpload" id="fileToUpload" class="email-input" placeholder="Choose your image for upload">
