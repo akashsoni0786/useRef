@@ -1,14 +1,11 @@
 
 <?php
 session_start();
-if(isset($_SESSION['user_id']))
-{
-
-
+include "connection.php";
+if(isset($_SESSION['user_id'])){
 if(isset($_FILES['my_image'])) 
 {
     $id = $_SESSION['user_id'];
-
     $heading = $_POST['blogheading'];
     $category = $_POST['blogcategory'];
     $content = $_POST['blogcontent'];
@@ -39,8 +36,8 @@ if($upload == 1){
         $sql = "INSERT INTO `Posts` (`post_img`, `post_date`, `post_category_name`, 
                 `post_heading`,`post_content`,`user_id`,`post_restricted`) 
                 VALUES ('$img', now() , '$category', '$heading','$content','$id','0')";
-            $conn->exec($sql);
-            echo "Blog Inserted";
+        $conn->query($sql);
+        echo "Blog Inserted";
         
     }
     catch(PDOException $e){

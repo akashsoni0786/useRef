@@ -65,6 +65,7 @@ if(isset($_POST['showDetailsofBloginPage']))
     {
         $sql = "SELECT * FROM `Posts` WHERE `user_id`= '$id' AND `post_id` = '$pid'";
         $row = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        $_SESSION['current_blog_users_id'] = $row[0]['user_id'];
         echo json_encode($row);
 
     }
@@ -133,7 +134,7 @@ if(isset($_POST['addComment']))
 {
     $comment = $_POST['addComment'];
     $pid = $_SESSION['pid'];
-    $uid = $_SESSION['uid'];
+    $uid = $_SESSION['user_id'];
     
     try
     {
@@ -154,11 +155,28 @@ if(isset($_POST['addComment']))
 
 if(isset($_POST['showAllComments'])){
     $pid = $_SESSION['pid'];
+    $show='block';
     try
     {
         $sql = "SELECT * FROM `Comments` WHERE `post_id`='$pid'";
         $row = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($row);
+        // echo json_encode($row);
+        $txt = '';
+        foreach($row as $i)
+        {
+            $txt .= '<div class="single-post__comment__item__text"><h5>'. $i['userfullname'] . '</h5><span>' . $i['comment_date'] . '</span><p id="commentLabel">' . $i['post_comment'] . 
+            '</p><ul id="showOrnot" style="display:'.$show.'">';
+            
+            if($_SESSION['role'] == 'admin' || $_SESSION['user_id']== $_SESSION['current_blog_users_id'])
+            {
+            $txt .='<li><a  id="' . $i['comment_id'] . '" data-bs-toggle="modal" data-bs-target="#editCommentModalBtn" class="editcommentBtn" ><i class="fa fa-edit"></i></a></li>
+            <li><a  id="' . $i['comment_id'] . '" class="deletecommentBtn"><i class="fa fa-trash"></i></a></li></ul>';
+            }
+            
+            $txt .= '</div>';
+        }
+        echo $txt;
+
 
            }
     catch(PDOException $e)
@@ -369,7 +387,7 @@ if(isset($_POST['banUser']))
     }
 }
 
-// 
+
 
 if(isset($_POST['searchPostsIndexPage']))
 {
@@ -390,6 +408,16 @@ if(isset($_POST['searchPostsIndexPage']))
         echo $e;
     }
 }
+
+if(isset($_POST['showCommentsRes'])){
+    $blog_usr_id = $_POST['showCommentsRes'];
+    if($_SESSION['user_id'] == $blog_usr_id || $_SESSION['user_id'] == 1111)
+    {
+
+        echo "Show";
+    }
+}
+
 }
 else{
     header('location:./404.php');

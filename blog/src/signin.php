@@ -120,11 +120,11 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="./index.html"><img src="img/humberger/humberger-logo.png" alt=""></a>
+            <a href="./index.php"><img src="img/humberger/humberger-logo.png" alt=""></a>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index.php">Home</a></li>
                 <li><a href="#">Recipes</a></li>
                 <li><a href="#">Dinner</a></li>
                 <li><a href="#">Desserts</a></li>
@@ -181,7 +181,7 @@
                     <div class="col-lg-8 col-md-10 order-md-2 order-3">
                         <nav class="header__menu">
                             <ul>
-                                <li><a href="./index.html">Home</a></li>
+                                <li><a href="./index.php">Home</a></li>
                                 <li><a href="#">Recipes</a>
                                     <div class="header__megamenu__wrapper">
                                         <div class="header__megamenu">
@@ -258,7 +258,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.php"><img src="img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3">
@@ -926,6 +926,7 @@
 
                 }
                 if (error.length == 0) {
+                    
                     var formdata = JSON.stringify($(this).serialize());
                     $.ajax({
                         url: 'loginserver.php',
@@ -934,19 +935,22 @@
                             signupbtn: formdata
                         },
                         success: function(result) {
-                            if (result == "User registered successfully") {
+                            console.log(result);
+                            if (result == "User registered successfully") 
+                            {
+                                $("#signinpageId").click();
                                 $("#username").val('');
                                 $("#password").val('');
                                 $("#confpassword").val('');
                                 $("#emailaddress").val('');
                                 $("#fullname").val('');
-                                $("#signinpageId").click();
+                                
                                 $("#sign-agree-check").prop('checked', false);
                             }
-                            if (result == "User already exists") {
+                            if (result == "User already exists") 
+                            {
                                 $("#usernameerror").html(result);
                                 $("#username").css('border', '5px solid orange');
-                                // alert(result);
                             }
 
 

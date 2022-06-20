@@ -44,7 +44,7 @@ if(isset($_SESSION['user_id']))
         <div class="humberger__menu__overlay"></div>
         <div class="humberger__menu__wrapper">
             <div class="humberger__menu__logo">
-                <a href="./index.html"><img src="img/humberger/humberger-logo.png" alt=""></a>
+                <a href="./index.php"><img src="img/humberger/humberger-logo.png" alt=""></a>
             </div>
             <nav class="humberger__menu__nav mobile-menu">
                 <ul>
@@ -90,13 +90,7 @@ if(isset($_SESSION['user_id']))
                                 </ul>
                             </nav>
                         </div>
-                        <div class="col-lg-2 col-md-1 col-6 order-md-3 order-2">
-                            <div class="header__search">
-                                <a style="color: red;" href="#blogAddition"> <i style="margin-right: 50px;" id="addbtnforblog" class="fa fa-plus "></i>
-                                </a><i class="fa fa-search search-switch"></i>
-
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -120,7 +114,7 @@ if(isset($_SESSION['user_id']))
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="header__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                            <a href="./index.php"><img src="img/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3">
@@ -231,7 +225,7 @@ if(isset($_SESSION['user_id']))
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            </script> All rights reserved 
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
@@ -275,7 +269,7 @@ if(isset($_SESSION['user_id']))
                     },
                     success: function(result) {
                         var users = JSON.parse(result);
-                        console.log(users);
+                        // console.log(users);
                         var row = '';
                         users.forEach(i => {
                             if (i['user_ban'] == 1) {
@@ -331,7 +325,7 @@ if(isset($_SESSION['user_id']))
                         restrictUserCheck: uid
                     },
                     success: function(result) {
-                        console.log(result);
+                        // console.log(result);
                         if (result == "free") {
                             if (confirm("Do you really want to restrict this user")) {
                                 sendRequest(uid);
