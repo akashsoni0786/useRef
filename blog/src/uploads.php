@@ -6,7 +6,7 @@ if(isset($_SESSION['user_id'])){
 if(isset($_FILES['my_image'])) 
 {
     $id = $_SESSION['user_id'];
-    $heading = $_POST['blogheading'];
+    $heading = ($_POST['blogheading']);
     $category = $_POST['blogcategory'];
     $content = $_POST['blogcontent'];
     $img = $_FILES['my_image']['name'];

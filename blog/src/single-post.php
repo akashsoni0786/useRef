@@ -147,9 +147,11 @@ if (isset($_SESSION['user_id'])  && isset($_SESSION['uid'])) {
                         </div>
                         <div class="single-post__social__item">
                             <ul>
-                                <?php if ($_SESSION['user_id'] == 1111) { ?>
+                            <span id="showoptionsforEdit">
                                     <li><a id="editBtnid" data-bs-toggle="modal" data-bs-target="#editContentModalBtn" href=""><i class="fa fa-edit"></i></a></li>
                                     <li><a id="deletePost" href=""><i class="fa fa-trash"></i></a></li>
+                            </span>
+                                <?php if ($_SESSION['user_id'] == 1111) { ?>
                                     <li><a id="restrictPost" href=""><i class="fa fa-ban"></i></a></li>
                                 <?php } ?>
                             </ul>
@@ -623,6 +625,21 @@ if (isset($_SESSION['user_id'])  && isset($_SESSION['uid'])) {
                         }
                     });
                 });
+                showOptionForEdit();
+                function showOptionForEdit(){
+                    
+                    $.ajax({
+                        url : 'homeserver.php',
+                        type : "POST",
+                        data:{showoptionsforEditBlog : true},
+                        success : function(result)
+                        {
+                            // console.log(result);
+                            $("#showoptionsforEdit").html(result);
+                            
+                        }
+                    });
+                }
 
             });
         </script>

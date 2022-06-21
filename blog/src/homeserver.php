@@ -75,6 +75,22 @@ if(isset($_POST['showDetailsofBloginPage']))
     }
 }
 
+if(isset($_POST['showoptionsforEditBlog']))
+{
+    $id = $_SESSION['uid'];
+    $pid = $_SESSION['pid'];
+    if($id == $_SESSION['user_id'])
+    {
+        $row = '<li><a id="editBtnid" data-bs-toggle="modal" data-bs-target="#editContentModalBtn" href=""><i class="fa fa-edit"></i></a></li>
+            <li><a id="deletePost" href=""><i class="fa fa-trash"></i></a></li>';
+        echo $row;
+    }
+    else{
+        echo '';
+    }
+    
+}
+
 if(isset($_POST['showDetailsofUserinPage']))
 {
     $id = $_SESSION['uid'];
