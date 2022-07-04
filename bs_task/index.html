@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/36a1ff03cb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link href="style.css" rel="stylesheet"/>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><b>Jevelin</b></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+           
+            <li class="nav-item dropdown">
+                <a class="nav-link nav-link nav-link dropdown-toggle" 
+                href="#"
+                id="www"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Home
+                </a>
+                <ul class="dropdown-menu"
+                aria-labelledby="www">
+  
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link nav-link nav-link dropdown-toggle" 
+              href="#"
+              id="Blog"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Blog
+              </a>
+              <ul class="dropdown-menu"
+              aria-labelledby="Blog">
+
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link nav-link dropdown-toggle"
+                href="#"
+                id="Portfolio"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Portfolio
+              </a>
+              <ul class="dropdown-menu"
+              aria-labelledby="Portfolio">
+
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+            </li>
+            <li class="nav-item dropdown position-relative">
+              <a
+                class="nav-link nav-link dropdown-toggle "
+                href="#"
+                id="New"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+              Shop <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                New
+                <span class="visually-hidden">unread messages</span>
+              </span>
+              </a>
+              <ul class="dropdown-menu"
+              aria-labelledby="New">
+
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="variations"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Variations
+              </a>
+              <ul class="dropdown-menu"
+                aria-labelledby="variations">
+
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+           
+            <li class="nav-item dropdown">
+                <a class="nav-link nav-link nav-link dropdown-toggle" 
+                href="#"
+                id="elems"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Elements
+                </a>
+                <ul class="dropdown-menu"
+                aria-labelledby="elems">
+  
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-cart-shopping">
+                
+                    <span class="position-absolute top-10 start-3 translate-middle badge rounded-pill bg-primary">
+                        0
+                      </span>
+                </i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row mt-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-6">
+          <p>
+            <img src="https://images.unsplash.com/photo-1582807129843-8a00296ccb37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=891&q=80" 
+            class="img-fluid" />
+          </p>
+        </div>
+        <div class="col-md-6 col-lg-6">
+          <h2>Android Phone</h2>
+          <div class="d-flex bd-highlight mb-3">
+            <div class="me-auto bd-highlight">
+              <del class="text-muted strike">$199</del>
+              <strong class="text-dark">$179</strong>
+            </div>
+            <div class="bd-highlight rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(1 review)</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem magnam quas ratione, excepturi pariatur molestias
+            accusantium?
+          </div>
+
+          <div class="d-flex bd-highlight mb-3">
+            <div class="me-auto bd-highlight align-items-center">
+              <div>
+                <i class="fa-solid fa-circle-arrow-down fa-2x"></i>
+                <span>1</span>
+                <i class="fa-solid fa-circle-arrow-up fa-2x"></i>
+              </div>
+            </div>
+            <div class="bd-highlight">
+              <button type="button" class="btn btn-primary">
+                <i class="fa-brands fa-opencart"></i>
+                Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column bd-highlight mb-3">
+            <div class="p-2">SKU:<span class="text-muted"> 12 </span></div>
+            <div class="p-2">
+              Category:
+              <span class="text-muted"><a href="#">Phones</a></span>
+            </div>
+            <div class="p-2">
+              Tag:
+              <span class="text-muted">Screen</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <button type="button" class="btn btn-light">
+              <i class="bi bi-share"></i>
+              Share
+            </button>
+          </div>
+
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="home-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#home"
+                type="button"
+                role="tab"
+                aria-controls="home"
+                aria-selected="true"
+              >
+                Description
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="profile-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#profile"
+                type="button"
+                role="tab"
+                aria-controls="profile"
+                aria-selected="false"
+              >
+                Reviews (1)
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="home"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Necessitatibus voluptatem reiciendis numquam molestias molestiae!
+              Sed similique voluptates quaerat explicabo reiciendis.
+            </div>
+            <div
+              class="tab-pane fade"
+              id="profile"
+              role="tabpanel"
+              aria-labelledby="profile-tab"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatem, dignissimos nam facilis eum quas impedit officiis
+              natus assumenda vel modi.
+            </div>
+            <div
+              class="tab-pane fade"
+              id="contact"
+              role="tabpanel"
+              aria-labelledby="contact-tab"
+            >
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+
+        <div class="col">
+          <div class="d-flex bd-highlight">
+            <div class="p-2 bd-highlight">
+              <i class="bi bi-cart-dash"></i>
+            </div>
+            <div class="p-2 bd-highlight">
+              <span  style="font-size: 2vw;">Free Shipping</span> <br />
+              <p  style="font-size: 1.2vw;">for purchasing over $50</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+            <div class="d-flex bd-highlight">
+              <div class="p-2 bd-highlight">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div class="p-2 bd-highlight">
+                <span style="font-size: 2vw;">Secure Payment</span> <br />
+                <p  style="font-size: 1.2vw;">for purchasing over $50</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="d-flex bd-highlight">
+              <div class="p-2 bd-highlight">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+              <div class="p-2 bd-highlight">
+                <span style="font-size: 2vw;">Same Day Shipping</span> <br />
+                <p  style="font-size: 1.2vw;">for purchasing over $50</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="footer">
+      <div class="container">
+      <div class="row mt-5">
+        <div class="d-flex bd-highlight mb-3">
+            <div class="me-auto bd-highlight align-items-center">
+              <div class="p-4 ps-0">
+                <p class="fs-5 text-white">Jevelin</p>
+              </div>
+            </div>
+            <div class="bd-highlight p-4">              
+                <i class="bi bi-twitter fa-2x p-4 px-2 text-white" ></i>
+                <i class="bi bi-instagram fa-2x px-2 text-white "></i>
+                <i class="bi bi-youtube fa-2x px-2 text-white "></i>
+                <i class="bi bi-whatsapp fa-2x px-2 text-white "></i>
+                
+            </div>
+          </div>
+      </div>
+
+      <div class="row mb-5">
+          <div class="col">
+             <p> Start Crafting <br>
+                Epic <strong>Websites</strong> <br>
+                Today! </p>      
+            <button class="btn btn-secondary">Purchase Here</button>       
+          </div>
+          <div class="col">
+              <p class="fw-bolder">Useful</p>
+              <p>Documentation intro video showcase Buy theme</p>
+          </div>
+          <div class="col">
+            <p class="fw-bolder">Keep in touch</p>
+            <p>Nippon, Osaka, Crimson steet 78-42 <br>
+                (10am-6am) EST, Mon-Fri <br>
+                <a class="text-white" href="mailto:support@brand.com">support@brand.com</a>
+            </p>
+          </div>
+          <div class="col">
+              <p class="fw-bolder">Sign up for newsletter</p>
+              <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="name@example.com">
+              <button type="submit" class="btn btn-secondary">Send</button>
+              <small>*Information is not disclosed to third party</small>
+              </div>
+              </div>
+          </div>
+          <div class="row">
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="me-auto p-2 bd-highlight">
+                        <p>&copy Jevelin, Crafted by Shufflehound</p>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <p><a class="text-white text-decoration-none" href="">Privacy Policy</a></p>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <p><a class="text-white text-decoration-none" href="">Terms & conditions</a></p>
+                    </div>
+                </div>
+          </div>
+        <ul class="nav flex-column floating-sidebar">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-layers text-dark"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-sunglasses text-dark"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-clipboard text-dark"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-question-circle text-dark"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-chat-left-text text-dark"></i></a>
+            </li>            
+          </ul>
+      </div>
+    <button
+        type="button"
+        class="btn btn-success btn-floating btn-lg"
+        id="btn-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+
+        function page_load(){
+            console.log("page loaded");
+                    
+            let mybutton = document.getElementById("btn-to-top");
+
+
+            window.onscroll = function () {
+            scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (
+                    document.body.scrollTop > 20 ||
+                    document.documentElement.scrollTop > 20
+                ) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+            mybutton.addEventListener("click", backToTop);
+
+            function backToTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+
+        }
+
+        window.onload = page_load;
+
+
+
+
+    </script>
+
+  </body>
+</html>
