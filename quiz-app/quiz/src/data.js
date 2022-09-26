@@ -1,0 +1,72 @@
+export const questions = [
+  {
+    category:"General Science",
+    sno:"1",
+    ques: "Which state has three capitals?",
+    options: ["Odisha", "Punjab", "Jammu and Kashmir", "Andhra Pradesh"],
+    answer: "Andhra Pradesh",
+  },
+  {
+    category:"General Science",
+    sno:"2",
+    ques: "Kavaratti is the capital of which State or Union territory?",
+    options: ["Andhra Pradesh", "Karnataka", "Lakshadweep", "Andaman and Nicobar Islandsh"],
+    answer: "Lakshadweep",
+  },
+  {
+    category:"General Science",
+    sno:"3",
+    ques: "Which is the capital of Odisha",
+    options: ["Cuttack", "Bhubaneshwar", "Mayurbhanj", "None of these"],
+    answer: "Bhubaneshwar",
+  },
+  {
+    category:"General Science",
+    sno:"4",
+    ques: "Which capital is known as 'Summer Capital'?",
+    options: ["Jaipur", "Bhopal", "Srinagar", "Kolkata"],
+    answer: "Srinagar",
+  },
+  {
+    category:"General Science",
+    sno:"5",
+    ques: "What is the Capital of Sikkim?",
+    options: ["Itanagar", "Gangtok", "Imphal", "None of the above"],
+    answer: "Gangtok",
+  },
+  {
+    category:"Maths",
+    sno:"6",
+    ques: "What is 2+2 ?",
+    options: ["4", "2", "0", "None of the above"],
+    answer: "4",
+  },
+  {
+    category:"Maths",
+    sno:"7",
+    ques: "Is 2+2 = 2*2 ?",
+    options: ["4", "2", "No", "Yes"],
+    answer: "Yes",
+  },
+  {
+    category:"Maths",
+    sno:"8",
+    ques: "What iss (a+b)^2 ?",
+    options: ["(a^2+b^2)", "(a^2+b^2+2ab)", "Undefined", "None of the above"],
+    answer: "(a^2+b^2+2ab)",
+  },
+  {
+    category:"Maths",
+    sno:"9",
+    ques: "What is (a-b)^2 ?",
+    options: ["(a^2-b^2)", "(a^2+b^2-2ab)", "(a^2-b^2-2ab)", "None of the above"],
+    answer: "(a^2+b^2-2ab)",
+  },
+  {
+    category:"Maths",
+    sno:"10",
+    ques: "If a=6 and a=b then a+b=?",
+    options: ["6", "12", "18", "None of the above"],
+    answer: "12",
+  }
+];
